@@ -1,0 +1,21 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12">
+                <h1>Créer un nouveau projet:</h1>
+
+                {{ form(form) }}
+
+                <ul class="record_actions">
+                    <li>
+                        <a href="{{ path('projets') }}">
+                            Retour à la liste des projets
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

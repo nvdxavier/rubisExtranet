@@ -1,0 +1,77 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <main>
+        <section id="portfolio-post">
+            <div class="container inner-top-md">
+                <div class="row inner-bottom-xs">
+                    <div class="col-md-8 col-sm-9 center-block text-center">
+                        <header>
+                            <h1>{{ entity.nomProjet }}</h1>
+                            <p>{{ entity.descriptionProjet }}</p>
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <ul class="circled">
+                                    <li class="client">Date de début: {{ entity.dateDebutProjet|date('Y-m-d') }}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="circled">
+                                    <li class="date">Date de fin : {{ entity.dateFinProjet|date('Y-m-d') }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="text-center" style="display:inline-flex; margin: 10px;">
+                                    <li style="margin: 4px;"><a class="btn btn-green" href="{{ path('projets') }}">Retour à la liste des projets</a></li>
+                            {% if app.user and is_granted("ROLE_ADMIN") %}
+                                    <li style="margin: 4px;"><a class="btn-orange btn" href="{{ path('projets_edit', { 'id': entity.id }) }}">Modifier</a></li>
+                                    <li style="margin: 4px;">{{ form(delete_form) }}</li>
+                            {% endif %}
+                            </ul>
+                        </header>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+                <ul class="filter text-center"></ul>
+                <div class="row">
+                    <div class="col-sm-7 inner-top-xs inner-right-xs">
+                        <header>
+                            <div class="text-normal">{{ entity.pleinedescription|raw }}</div>
+                        </header>
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-sm-4 col-sm-offset-1 outer-top-xs inner-left-xs border-left">
+                        <ul class="item-details">
+                            <p>Taches associé au projet</p>
+                            {% for flashMessage in app.session.flashbag.get('success') %}
+                            <div class="alert alert-success">
+                                {{ flashMessage }}
+                            </div>
+                                <ul>
+                                    <li>
+                                        <a class="btn" href="{{ path('taches_new') }}">Créer une nouvelle tache</a>
+                                    </li>
+                                </ul>
+                            {% endfor %}
+                            {%  for tache in tachebyprojet  %}
+                                <div class="post-author bg-gray">
+                                    <div>{{ tache.tache }}</div>
+                                    <div><li class="url">prioritée: {{ tache.priorite }}</li></div>
+                                    <li class="categories">Status: {{ tache.statutTache }}</li>
+                                    <li class="client">{{ tache.compteutilisateur }}</li>
+                                    <a class="txt-btn" href="{{ path('taches_show', { 'id': tache.id }) }}"><i class="icon-search"></i>En détails</a>
+                                </div><br/>
+                            {% endfor %}
+                        </ul>
+                        <!-- /.item-details -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </section>
+        <div style="height:400px;"></div>
+    </main>
+{% endblock %}
+
+

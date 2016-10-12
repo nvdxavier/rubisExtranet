@@ -1,0 +1,30 @@
+adminCompteUtilisateur:
+    path:     /
+    defaults: { _controller: "CompteUtilisateurBundle:CompteUtilisateurAdmin:index" }
+
+adminCompteUtilisateur_show:
+    path:     /{id}/show
+    defaults: { _controller: "CompteUtilisateurBundle:CompteUtilisateurAdmin:show" }
+
+adminCompteUtilisateur_new:
+    path:     /new
+    defaults: { _controller: "CompteUtilisateurBundle:CompteUtilisateurAdmin:new" }
+
+adminCompteUtilisateur_create:
+    path:     /create
+    defaults: { _controller: "CompteUtilisateurBundle:CompteUtilisateurAdmin:create" }
+    methods:  POST
+
+adminCompteUtilisateur_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CompteUtilisateurBundle:CompteUtilisateurAdmin:edit" }
+
+adminCompteUtilisateur_update:
+    path:     /{id}/update
+    defaults: { _controller: "CompteUtilisateurBundle:CompteUtilisateurAdmin:update" }
+    methods:  [POST, PUT]
+
+adminCompteUtilisateur_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CompteUtilisateurBundle:CompteUtilisateurAdmin:delete" }
+    methods:  [POST, DELETE]

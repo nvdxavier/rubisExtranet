@@ -1,0 +1,10 @@
+compte_utilisateur_adminCompteUtilisateur:
+    resource: "@CompteUtilisateurBundle/Resources/config/routingAdmin.yml"
+    prefix:   /admin/utilisateurs/
+
+compte_utilisateur_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: CompteUtilisateurBundle:Default:index }
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

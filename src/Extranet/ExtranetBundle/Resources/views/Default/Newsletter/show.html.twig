@@ -1,0 +1,52 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>Newsletter</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id de la newsletter</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+
+            <tr>
+                <th>Sujet</th>
+                <td>{{ entity.sujet }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ entity.form }}</td>
+            </tr>
+            <tr>
+                <th>Mise à jour le: </th>
+                <td>{{ entity.dateMiseAJour|date('d-m-Y H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Date d'envois</th>
+                <td>{% if entity.dateEnvois %}{{ entity.dateEnvois|date('Y-m-d H:i:s') }}{% else %}<p>Pas encore envoyé pour l'instant</p>{% endif %}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('newsletter') }}">
+            retour à la liste
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('newsletter_edit', { 'id': entity.id }) }}">
+            Editer
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+
+    {{ form(send_newsletter) }}
+{% endblock %}

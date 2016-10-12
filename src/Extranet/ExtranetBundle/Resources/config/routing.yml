@@ -1,0 +1,29 @@
+extranet_projets:
+    resource: "@ExtranetBundle/Resources/config/routing/projets.yml"
+    prefix:   /projets
+
+extranet_taches:
+    resource: "@ExtranetBundle/Resources/config/routing/taches.yml"
+    prefix:   /taches
+
+extranet_admin_:
+    resource: "@ExtranetBundle/Resources/config/routingAdmin.yml"
+    prefix:   /admin/produit/
+
+extranet_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ExtranetBundle:Default:index }
+
+recherche:
+    pattern:  /recherche
+    defaults: { _controller: ExtranetBundle:Default:rechercheTraitement }
+
+extranet_contact:
+    path:  /contact
+    defaults: { _controller: ExtranetBundle:Page:contact }
+    requirements:
+        _method:  GET|POST
+
+extranet_newsletter:
+    resource: "@ExtranetBundle/Resources/config/routing/newsletter.yml"
+    prefix:   /newsletter

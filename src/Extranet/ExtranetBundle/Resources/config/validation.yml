@@ -1,0 +1,5 @@
+Extranet\ExtranetBundle\Entity\Projetdocuments:
+    properties:
+        file:
+            - File:
+                maxSize: 6000000

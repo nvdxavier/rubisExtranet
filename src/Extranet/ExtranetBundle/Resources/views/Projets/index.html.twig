@@ -1,0 +1,78 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <main>
+        <section id="portfolio">
+            <div class="container inner">
+                <div class="row">
+                    <div class="col-md-8 col-sm-9 center-block text-center">
+                        <header>
+                            <h1>3 Columns grid portfolio</h1>
+                            <p>Magnis modipsae voloratati andigen daepeditem quiate re porem que aut labor. Laceaque
+                                eictemperum quiae sitiorem rest non restibusaes.</p>
+                        </header>
+                        {% for file in files %}
+                        <img class="logo" style="max-height: 99px !important;"
+                             src="{{ asset(file) }}" alt=""/>
+                            {%  endfor %}
+                        {% if app.user and is_granted("ROLE_ADMIN") %}
+                            <ul>
+                                <li>
+                                    <a class="btn" href="{{ path('projets_new') }}">
+                                        Créer un nouveau projet
+                                    </a>
+                                </li>
+                            </ul>
+                        {% endif %}
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+
+            <div class="container inner-bottom">
+                <div class="row">
+                    <div class="col-sm-12 portfolio">
+                        <ul class="filter text-center"></ul>
+                        <ul class="items col-3">
+                            {% for entity in entities %}
+                                <li class="item thumb interactive">
+                                    <a href="{{ path('projets_show', { 'id': entity.id }) }}">
+                                        <figure>
+                                            <figcaption class="text-overlay grey_opacity">
+                                                <div class="info">
+                                                    <h2>{% if entity.nomProjet %}{{ entity.nomProjet }}{% endif %}</h2>
+                                                    <hr/>
+                                                    <p>{{ entity.descriptionProjet }}</p>
+                                                    <p>{% if entity.dateDebutProjet %}{{ entity.dateDebutProjet|date('Y-m-d H:i:s') }}{% endif %}</p>
+                                                    <p>{% if entity.dateFinProjet %}{{ entity.dateFinProjet|date('Y-m-d H:i:s') }}{% endif %}</p>
+                                                    <p>{{ entity.etatduProjet }}</p>
+                                                    <ul>
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12 col-md-pull-5">
+                                                                {% if app.user and is_granted("ROLE_ADMIN") %}
+                                                                    <li><a class="btn btn-blue" href="{{ path('projets_edit', { 'id': entity.id }) }}">Editer</a></li>
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                                <!-- /.info -->
+                                            </figcaption>
+                                            <img src="{{ asset('images/logo-fil-noir-01.png') }}" alt="">
+                                        </figure>
+                                        </a>
+                                </li>
+                                <!-- /.item -->
+                            {% endfor %}
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% endblock %}

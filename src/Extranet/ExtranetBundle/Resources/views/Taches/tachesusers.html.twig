@@ -1,0 +1,62 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>Mes Taches</h1>
+    {% for tacheuser in tachesbyuser %}
+
+        <table class="record_properties">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ tacheuser.id }}</td>
+        </tr>
+        <tr>
+            <th>Tache</th>
+            <td>{{ tacheuser.tache }}</td>
+        </tr>
+        <tr>
+            <th>Description tache</th>
+            <td>{{ tacheuser.descriptionTache }}</td>
+        </tr>
+        <tr>
+            <th>Duree</th>
+            <td>{{ tacheuser.duree|date('H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Debut</th>
+            <td>{{ tacheuser.debut|date('d-m-Y H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fin</th>
+            <td>{{ tacheuser.fin|date('d-m-Y H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Statuttache</th>
+            <td>{{ tacheuser.statutTache }}</td>
+        </tr>
+        <tr>
+            <th>Priorite</th>
+            <td>{{ tacheuser.priorite }}</td>
+        </tr>
+        <tr>
+            <th>Idprojet</th>
+            <td>{{ tacheuser.idProjet }}</td>
+        </tr>
+        </tbody>
+        </table>
+
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('taches') }}">
+                    Back to the list
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('taches_edit', { 'id': tacheuser.id }) }}">
+                    Edit
+                </a>
+            </li>
+            <li>{{ form(delete_form) }}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}

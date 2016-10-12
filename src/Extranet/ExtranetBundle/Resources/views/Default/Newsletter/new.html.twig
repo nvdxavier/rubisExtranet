@@ -1,0 +1,15 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>Création newsletter</h1>
+    <div class="span10">
+    {{ form(form) }}
+    </div>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('newsletter') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+{% endblock %}

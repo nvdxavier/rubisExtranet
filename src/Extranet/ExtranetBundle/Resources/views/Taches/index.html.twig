@@ -1,0 +1,55 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>Taches list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tache</th>
+                <th>Description tache</th>
+                <th>Duree</th>
+                <th>Debut</th>
+                <th>Fin</th>
+                <th>Statut tache</th>
+                <th>Priorite</th>
+                <th>Idprojet</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('taches_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.tache }}</td>
+                <td>{{ entity.descriptionTache }}</td>
+                <td>{{ entity.duree|date('H:i:s') }}</td>
+                <td>{{ entity.debut|date('d-m-Y H:i:s') }}</td>
+                <td>{{ entity.fin|date('d-m-Y H:i:s') }}</td>
+                <td>{{ entity.statutTache }}</td>
+                <td>{{ entity.priorite }}</td>
+                <td>{{ entity.projets }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('taches_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('taches_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('taches_new') }}">
+                Créer une tache
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

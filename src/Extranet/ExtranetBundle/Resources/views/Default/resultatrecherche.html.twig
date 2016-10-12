@@ -1,0 +1,22 @@
+{% extends "::layout/layoutAdmin.html.twig" %}
+
+{% block body %}
+    <div class="container">
+    <div class="row">
+    <div class="col-md-3">
+    {% if recherche|length != 0 %}
+        {% for resultat in recherche %}
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>
+                        {{ dump(resultat)}}
+                        <a href="{#{ path('taches_show', { 'id': resultat.tache }) }}">{{ resultat.tache }#}</a>
+                    </h4>
+                    <p>{#{ resultat.descriptionTache }#}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h4>Aucun résultat</h4>
+    {% endif %}
+{% endblock %}

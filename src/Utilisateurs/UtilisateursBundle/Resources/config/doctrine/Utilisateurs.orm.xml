@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Utilisateurs\UtilisateursBundle\Entity\Utilisateurs" table="utilisateurs">
+    <id name="idUtilisateur" type="integer" column="Id_Utilisateur">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="username" type="string" column="Username" length="100" nullable="false"/>
+    <field name="nomUtilisateur" type="string" column="Nom_Utilisateur" length="30" nullable="false"/>
+    <field name="prenomUtilisateur" type="string" column="Prenom_Utilisateur" length="30" nullable="false"/>
+    <field name="emailUtilisateur" type="string" column="Email_Utilisateur" length="40" nullable="false"/>
+    <field name="emailCode" type="string" column="email_code" length="200" nullable="false"/>
+    <field name="mdpUtilisateur" type="string" column="MDP_Utilisateur" length="200" nullable="false"/>
+    <field name="datenaissanceUtilisateur" type="date" column="DateNaissance_Utilisateur" nullable="false"/>
+    <field name="adresseUtilisateur" type="string" column="Adresse_Utilisateur" length="30" nullable="false"/>
+    <field name="villeUtilisateur" type="string" column="Ville_Utilisateur" length="30" nullable="false"/>
+    <field name="codepostalUtilisateur" type="string" column="CodePostal_Utilisateur" length="30" nullable="false"/>
+    <field name="telephoneUtilisateur" type="string" column="Telephone_Utilisateur" length="30" nullable="false"/>
+    <field name="statut" type="integer" column="Statut" nullable="false"/>
+    <field name="generatedString" type="string" column="generated_string" length="35" nullable="false"/>
+    <field name="newsletter" type="boolean" column="newsletter" nullable="false"/>
+  </entity>
+</doctrine-mapping>

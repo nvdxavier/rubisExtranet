@@ -1,0 +1,30 @@
+adminProduit:
+    path:     /
+    defaults: { _controller: "ExtranetBundle:ProduitAdmin:index" }
+
+adminProduit_show:
+    path:     /{id}/show
+    defaults: { _controller: "ExtranetBundle:ProduitAdmin:show" }
+
+adminProduit_new:
+    path:     /new
+    defaults: { _controller: "ExtranetBundle:ProduitAdmin:new" }
+
+adminProduit_create:
+    path:     /create
+    defaults: { _controller: "ExtranetBundle:ProduitAdmin:create" }
+    methods:  [POST, GET]
+
+adminProduit_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ExtranetBundle:ProduitAdmin:edit" }
+
+adminProduit_update:
+    path:     /{id}/update
+    defaults: { _controller: "ExtranetBundle:ProduitAdmin:update" }
+    methods:  [POST, PUT]
+
+adminProduit_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ExtranetBundle:ProduitAdmin:delete" }
+    methods:  [POST, DELETE]

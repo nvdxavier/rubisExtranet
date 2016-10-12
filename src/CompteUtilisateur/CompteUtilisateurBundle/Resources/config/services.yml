@@ -1,0 +1,4 @@
+services:
+#    compte_utilisateur.example:
+#        class: CompteUtilisateur\CompteUtilisateurBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

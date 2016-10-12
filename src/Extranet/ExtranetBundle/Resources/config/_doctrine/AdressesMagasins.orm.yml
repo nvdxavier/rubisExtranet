@@ -1,0 +1,11 @@
+Extranet\ExtranetBundle\Entity\AdressesMagasins:
+    type: entity
+    table: null
+    repositoryClass: Extranet\ExtranetBundle\Entity\AdressesMagasinsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

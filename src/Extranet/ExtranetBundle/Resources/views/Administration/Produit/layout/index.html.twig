@@ -1,0 +1,51 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>Produit list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Nom produit</th>
+                <th>Descriptif produit</th>
+                <th>Prix produit</th>
+                <th>Statut produit</th>
+                <th>Actif</th>
+                <th>Remise produit</th>
+                <th>Id produit</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('adminProduit_show', { 'id': entity.idProduit }) }}">{{ entity.nomProduit }}</a></td>
+                <td>{{ entity.descriptifProduit }}</td>
+                <td>{{ entity.prixProduit }}</td>
+                <td>{{ entity.statutProduit }}</td>
+                <td>{{ entity.actif }}</td>
+                <td>{{ entity.remiseProduit }}</td>
+                <td>{{ entity.idProduit }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('adminProduit_show', { 'id': entity.idProduit }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('adminProduit_edit', { 'id': entity.idProduit }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('adminProduit_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

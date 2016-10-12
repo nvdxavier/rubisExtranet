@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block titre %}Extranet Rubis{% endblock %}</title>
+    <meta name="keywords" content="{% block motsCles %}{% endblock %}" />
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" data-skrollr-stylesheet>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/green.css') }}" title="Color"/>
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}"/>
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,900,300,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic" rel="stylesheet">
+
+    <!-- Icons/Glyphs -->
+    <link href="{{ asset('fonts/fontello.css') }}" rel="stylesheet"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}"/>
+
+    <!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
+    <!--[if lt IE 9]>
+    <script src="{{ asset('js/html5shiv.js') }}"></script>
+    <script src="{{ asset('js/respond.min.js') }}"></script>
+    <![endif]-->
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+    <body>
+    <header>
+        <div class="navbar">
+            <div class="navbar-header">
+                <div class="container">
+
+                    <ul class="info pull-left">
+                        <li><a href="#"><i class="icon-mail-1 contact"></i> info@reen.com</a></li>
+                        <li><i class="icon-mobile contact"></i> +00 (123) 456 78 90</li>
+                    </ul><!-- /.info -->
+
+                    <ul class="social pull-right">
+                        <li><a href="#"><i class="icon-s-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-s-gplus"></i></a></li>
+                        <li><a href="#"><i class="icon-s-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-s-pinterest"></i></a></li>
+                        <li><a href="#"><i class="icon-s-behance"></i></a></li>
+                        <li><a href="#"><i class="icon-s-dribbble"></i></a></li>
+                    </ul><!-- /.social -->
+                    <ul class="nav nav-bar">
+                        <li class="dropdown pull-right searchbox">
+                            <a href="#" class="dropdown-toggle js-activated"><i class="icon-search"></i></a>
+                            <div class="menu">
+                                {{ render(controller('ExtranetBundle:Default:recherche')) }}
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- ============================================================= LOGO MOBILE ============================================================= -->
+
+                    <!--<a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" class="logo" alt=""></a>-->
+
+                    <!-- ============================================================= LOGO MOBILE : END ============================================================= -->
+
+                    <a class="btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i class='icon-menu-1'></i></a>
+
+                </div><!-- /.container -->
+            </div><!-- /.navbar-header -->
+
+            <div class="yamm">
+                <div class="navbar-collapse collapse">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-2 col-md-push-1">
+                                    <a class="navbar-brand scroll-to" href="#top">
+                                        <img src="{{ asset('images/logo.svg') }}" class="logo" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="nav navbar-nav pull-right">
+                            <li><a href="{{ path('adminCompteUtilisateur') }}" class="scroll-to" data-anchor-offset="0">Gestion des Utilisateurs</a></li>
+                            <li><a href="{{ path('adminProduit') }}" class="scroll-to" data-anchor-offset="0">Gestion des produits</a></li>
+                            <li><a href="" class="scroll-to" data-anchor-offset="0">
+                                    Gestion des commandes</a></li>
+                            <li><a href="" class="scroll-to" data-anchor-offset="0">Devis</a></li>
+                            <li><a href="" class="scroll-to" data-anchor-offset="0">Gestion des progets</a>
+                            </li>
+                            <li><a href="" class="scroll-to" data-anchor-offset="0">Gestion des produits</a></li>
+                            <li>
+                                <a class="brand" href="{#{{ path('admin') }}#}">Administration</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+        {% block body %}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/57b1ad90279b7c0a86fe500a/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    </body>
+</html>

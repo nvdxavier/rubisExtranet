@@ -1,0 +1,11 @@
+Extranet\ExtranetBundle\Entity\Commande:
+    type: entity
+    table: null
+    repositoryClass: Extranet\ExtranetBundle\Repository\CommandeRepository
+    id:
+        idCommande:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

@@ -1,0 +1,30 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <main>
+        <section id="portfolio-post">
+            <div class="container inner-top-md">
+                <div class="row inner-bottom-xs">
+                    <div class="col-md-12">
+                        <h1>Modifier projet</h1>
+                        <div class="col-md-9">
+                            {{ form(edit_form) }}
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="record_actions">
+                                <li>
+                                    <a class="btn" href="{{ path('projets') }}">
+                                        Retour à la liste des taches
+                                    </a>
+                                </li>
+                                <li>{{ form(delete_form) }}</li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

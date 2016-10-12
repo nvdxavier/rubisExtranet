@@ -1,0 +1,27 @@
+vendeur:
+    resource: "@VendeurBundle/Resources/config/routing.yml"
+    prefix:   /
+
+compte_utilisateur:
+    resource: "@CompteUtilisateurBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+utilisateurs:
+    resource: "@UtilisateursBundle/Resources/config/routing.yml"
+    prefix:   /
+
+extranet:
+    resource: "@ExtranetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+mremi_contact_form:
+    resource: "@MremiContactBundle/Resources/config/routing.xml"

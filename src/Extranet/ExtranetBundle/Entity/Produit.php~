@@ -1,0 +1,215 @@
+<?php
+
+namespace Extranet\ExtranetBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Produit
+ *
+ * @ORM\Table(name="produit")
+ * @ORM\Entity(repositoryClass="Extranet\ExtranetBundle\Repository\ProduitRepository")
+ */
+class Produit
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nom_Produit", type="string", length=30, nullable=false)
+     */
+    private $nomProduit;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Descriptif_Produit", type="string", length=255, nullable=false)
+     */
+    private $descriptifProduit;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Prix_Produit", type="string", length=1500, nullable=false)
+     */
+    private $prixProduit;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Statut_Produit", type="string", length=1500, nullable=false)
+     */
+    private $statutProduit;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="Actif", type="boolean", nullable=false)
+     */
+    private $actif;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Remise_Produit", type="integer", nullable=false)
+     */
+    private $remiseProduit;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Id_Produit", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idProduit;
+
+
+
+    /**
+     * Set nomProduit
+     *
+     * @param string $nomProduit
+     * @return Produit
+     */
+    public function setNomProduit($nomProduit)
+    {
+        $this->nomProduit = $nomProduit;
+
+        return $this;
+    }
+
+    /**
+     * Get nomProduit
+     *
+     * @return string 
+     */
+    public function getNomProduit()
+    {
+        return $this->nomProduit;
+    }
+
+    /**
+     * Set descriptifProduit
+     *
+     * @param string $descriptifProduit
+     * @return Produit
+     */
+    public function setDescriptifProduit($descriptifProduit)
+    {
+        $this->descriptifProduit = $descriptifProduit;
+
+        return $this;
+    }
+
+    /**
+     * Get descriptifProduit
+     *
+     * @return string 
+     */
+    public function getDescriptifProduit()
+    {
+        return $this->descriptifProduit;
+    }
+
+    /**
+     * Set prixProduit
+     *
+     * @param string $prixProduit
+     * @return Produit
+     */
+    public function setPrixProduit($prixProduit)
+    {
+        $this->prixProduit = $prixProduit;
+
+        return $this;
+    }
+
+    /**
+     * Get prixProduit
+     *
+     * @return string 
+     */
+    public function getPrixProduit()
+    {
+        return $this->prixProduit;
+    }
+
+    /**
+     * Set statutProduit
+     *
+     * @param string $statutProduit
+     * @return Produit
+     */
+    public function setStatutProduit($statutProduit)
+    {
+        $this->statutProduit = $statutProduit;
+
+        return $this;
+    }
+
+    /**
+     * Get statutProduit
+     *
+     * @return string 
+     */
+    public function getStatutProduit()
+    {
+        return $this->statutProduit;
+    }
+
+    /**
+     * Set actif
+     *
+     * @param boolean $actif
+     * @return Produit
+     */
+    public function setActif($actif)
+    {
+        $this->actif = $actif;
+
+        return $this;
+    }
+
+    /**
+     * Get actif
+     *
+     * @return boolean 
+     */
+    public function getActif()
+    {
+        return $this->actif;
+    }
+
+    /**
+     * Set remiseProduit
+     *
+     * @param integer $remiseProduit
+     * @return Produit
+     */
+    public function setRemiseProduit($remiseProduit)
+    {
+        $this->remiseProduit = $remiseProduit;
+
+        return $this;
+    }
+
+    /**
+     * Get remiseProduit
+     *
+     * @return integer 
+     */
+    public function getRemiseProduit()
+    {
+        return $this->remiseProduit;
+    }
+
+    /**
+     * Get idProduit
+     *
+     * @return integer 
+     */
+    public function getIdProduit()
+    {
+        return $this->idProduit;
+    }
+}

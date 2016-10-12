@@ -1,0 +1,81 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12 col-md-push-1">
+                <h1>Taches</h1>
+                <table class="table">
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ entity.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Tache</th>
+                        <td>{{ entity.tache }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Descriptiontache</th>
+                        <td>{{ entity.descriptionTache }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Appartient au projet</th>
+                        <td>
+                            {% for projetlol in projet %}
+                                {{ projetlol.nomProjet }}
+                            {% endfor %}
+                            {{ entity.projets }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Tache attribuée à:</th>
+                        <td>
+                            {% for tache in tachebyprojet %}
+                                <div>
+                                    {{ tache.username }}
+                                </div>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Durée: </th>
+                        <td>{{ entity.duree|date('H:i:s') }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date de début :</th>
+                        <td>{{ entity.debut|date('d-m-Y H:i:s') }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date de fin :</th>
+                        <td>{{ entity.fin|date('d-m-Y H:i:s') }}</td>
+                    </tr>
+                    <tr>
+                        <th>Statut: </th>
+                        <td>{{ entity.statutTache }}</td>
+                    </tr>
+                    <tr>
+                        <th>Priorite</th>
+                        <td>{{ entity.priorite }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <ul class="record_actions">
+                    <li>
+                        <a class="btn btn-default"  href="{{ path('taches') }}">
+                           Retour à la liste
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-warning" href="{{ path('taches_edit', { 'id': entity.id }) }}">
+                            Editer
+                        </a>
+                    </li>
+                    <li>{{ form(delete_form) }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+taches:
+    path:     /
+    defaults: { _controller: "ExtranetBundle:Taches:index" }
+
+taches_show:
+    path:     /{id}/show
+    defaults: { _controller: "ExtranetBundle:Taches:show" }
+
+taches_new:
+    path:     /new
+    defaults: { _controller: "ExtranetBundle:Taches:new" }
+
+taches_create:
+    path:     /create
+    defaults: { _controller: "ExtranetBundle:Taches:create" }
+    methods:  POST
+
+taches_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ExtranetBundle:Taches:edit" }
+
+taches_update:
+    path:     /{id}/update
+    defaults: { _controller: "ExtranetBundle:Taches:update" }
+    methods:  [POST, PUT]
+
+taches_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ExtranetBundle:Taches:delete" }
+    methods:  [POST, DELETE]
+
+mes_taches:
+    path:     /{id}/mes_taches
+    defaults: { _controller: "ExtranetBundle:Taches:gettachebyuser" }

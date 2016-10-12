@@ -1,0 +1,30 @@
+projets:
+    path:     /
+    defaults: { _controller: "ExtranetBundle:Projets:index" }
+
+projets_show:
+    path:     /{id}/show
+    defaults: { _controller: "ExtranetBundle:Projets:show" }
+
+projets_new:
+    path:     /new
+    defaults: { _controller: "ExtranetBundle:Projets:new" }
+
+projets_create:
+    path:     /create
+    defaults: { _controller: "ExtranetBundle:Projets:create" }
+    methods:  POST
+
+projets_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ExtranetBundle:Projets:edit" }
+
+projets_update:
+    path:     /{id}/update
+    defaults: { _controller: "ExtranetBundle:Projets:update" }
+    methods:  [POST, PUT]
+
+projets_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ExtranetBundle:Projets:delete" }
+    methods:  [POST, DELETE]

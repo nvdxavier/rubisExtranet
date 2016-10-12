@@ -1,0 +1,18 @@
+Extranet\ExtranetBundle\Entity\Projetdocuments:
+    type: entity
+    table: null
+    repositoryClass: Extranet\ExtranetBundle\Entity\ProjetdocumentsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        path:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

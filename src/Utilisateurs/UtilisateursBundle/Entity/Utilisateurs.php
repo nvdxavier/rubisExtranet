@@ -1,0 +1,455 @@
+<?php
+
+namespace Utilisateurs\UtilisateursBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Utilisateurs
+ *
+ * @ORM\Table(name="utilisateurs")
+ * @ORM\Entity(repositoryClass="Utilisateurs\UtilisateursBundle\Repository\UtilisateursRepository")
+ */
+class Utilisateurs
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Username", type="string", length=100, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nom_Utilisateur", type="string", length=30, nullable=false)
+     */
+    private $nomUtilisateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Prenom_Utilisateur", type="string", length=30, nullable=false)
+     */
+    private $prenomUtilisateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Email_Utilisateur", type="string", length=40, nullable=false)
+     */
+    private $emailUtilisateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_code", type="string", length=200, nullable=false)
+     */
+    private $emailCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="MDP_Utilisateur", type="string", length=200, nullable=false)
+     */
+    private $mdpUtilisateur;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateNaissance_Utilisateur", type="date", nullable=false)
+     */
+    private $datenaissanceUtilisateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Adresse_Utilisateur", type="string", length=30, nullable=false)
+     */
+    private $adresseUtilisateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Ville_Utilisateur", type="string", length=30, nullable=false)
+     */
+    private $villeUtilisateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CodePostal_Utilisateur", type="string", length=30, nullable=false)
+     */
+    private $codepostalUtilisateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Telephone_Utilisateur", type="string", length=30, nullable=false)
+     */
+    private $telephoneUtilisateur;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Statut", type="integer", nullable=false)
+     */
+    private $statut;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="generated_string", type="string", length=35, nullable=false)
+     */
+    private $generatedString;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="newsletter", type="boolean", nullable=false)
+     */
+    private $newsletter;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Id_Utilisateur", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idUtilisateur;
+
+
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return Utilisateurs
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string 
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Set nomUtilisateur
+     *
+     * @param string $nomUtilisateur
+     * @return Utilisateurs
+     */
+    public function setNomUtilisateur($nomUtilisateur)
+    {
+        $this->nomUtilisateur = $nomUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get nomUtilisateur
+     *
+     * @return string 
+     */
+    public function getNomUtilisateur()
+    {
+        return $this->nomUtilisateur;
+    }
+
+    /**
+     * Set prenomUtilisateur
+     *
+     * @param string $prenomUtilisateur
+     * @return Utilisateurs
+     */
+    public function setPrenomUtilisateur($prenomUtilisateur)
+    {
+        $this->prenomUtilisateur = $prenomUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get prenomUtilisateur
+     *
+     * @return string 
+     */
+    public function getPrenomUtilisateur()
+    {
+        return $this->prenomUtilisateur;
+    }
+
+    /**
+     * Set emailUtilisateur
+     *
+     * @param string $emailUtilisateur
+     * @return Utilisateurs
+     */
+    public function setEmailUtilisateur($emailUtilisateur)
+    {
+        $this->emailUtilisateur = $emailUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get emailUtilisateur
+     *
+     * @return string 
+     */
+    public function getEmailUtilisateur()
+    {
+        return $this->emailUtilisateur;
+    }
+
+    /**
+     * Set emailCode
+     *
+     * @param string $emailCode
+     * @return Utilisateurs
+     */
+    public function setEmailCode($emailCode)
+    {
+        $this->emailCode = $emailCode;
+
+        return $this;
+    }
+
+    /**
+     * Get emailCode
+     *
+     * @return string 
+     */
+    public function getEmailCode()
+    {
+        return $this->emailCode;
+    }
+
+    /**
+     * Set mdpUtilisateur
+     *
+     * @param string $mdpUtilisateur
+     * @return Utilisateurs
+     */
+    public function setMdpUtilisateur($mdpUtilisateur)
+    {
+        $this->mdpUtilisateur = $mdpUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get mdpUtilisateur
+     *
+     * @return string 
+     */
+    public function getMdpUtilisateur()
+    {
+        return $this->mdpUtilisateur;
+    }
+
+    /**
+     * Set datenaissanceUtilisateur
+     *
+     * @param \DateTime $datenaissanceUtilisateur
+     * @return Utilisateurs
+     */
+    public function setDatenaissanceUtilisateur($datenaissanceUtilisateur)
+    {
+        $this->datenaissanceUtilisateur = $datenaissanceUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get datenaissanceUtilisateur
+     *
+     * @return \DateTime 
+     */
+    public function getDatenaissanceUtilisateur()
+    {
+        return $this->datenaissanceUtilisateur;
+    }
+
+    /**
+     * Set adresseUtilisateur
+     *
+     * @param string $adresseUtilisateur
+     * @return Utilisateurs
+     */
+    public function setAdresseUtilisateur($adresseUtilisateur)
+    {
+        $this->adresseUtilisateur = $adresseUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get adresseUtilisateur
+     *
+     * @return string 
+     */
+    public function getAdresseUtilisateur()
+    {
+        return $this->adresseUtilisateur;
+    }
+
+    /**
+     * Set villeUtilisateur
+     *
+     * @param string $villeUtilisateur
+     * @return Utilisateurs
+     */
+    public function setVilleUtilisateur($villeUtilisateur)
+    {
+        $this->villeUtilisateur = $villeUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get villeUtilisateur
+     *
+     * @return string 
+     */
+    public function getVilleUtilisateur()
+    {
+        return $this->villeUtilisateur;
+    }
+
+    /**
+     * Set codepostalUtilisateur
+     *
+     * @param string $codepostalUtilisateur
+     * @return Utilisateurs
+     */
+    public function setCodepostalUtilisateur($codepostalUtilisateur)
+    {
+        $this->codepostalUtilisateur = $codepostalUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get codepostalUtilisateur
+     *
+     * @return string 
+     */
+    public function getCodepostalUtilisateur()
+    {
+        return $this->codepostalUtilisateur;
+    }
+
+    /**
+     * Set telephoneUtilisateur
+     *
+     * @param string $telephoneUtilisateur
+     * @return Utilisateurs
+     */
+    public function setTelephoneUtilisateur($telephoneUtilisateur)
+    {
+        $this->telephoneUtilisateur = $telephoneUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get telephoneUtilisateur
+     *
+     * @return string 
+     */
+    public function getTelephoneUtilisateur()
+    {
+        return $this->telephoneUtilisateur;
+    }
+
+    /**
+     * Set statut
+     *
+     * @param integer $statut
+     * @return Utilisateurs
+     */
+    public function setStatut($statut)
+    {
+        $this->statut = $statut;
+
+        return $this;
+    }
+
+    /**
+     * Get statut
+     *
+     * @return integer 
+     */
+    public function getStatut()
+    {
+        return $this->statut;
+    }
+
+    /**
+     * Set generatedString
+     *
+     * @param string $generatedString
+     * @return Utilisateurs
+     */
+    public function setGeneratedString($generatedString)
+    {
+        $this->generatedString = $generatedString;
+
+        return $this;
+    }
+
+    /**
+     * Get generatedString
+     *
+     * @return string 
+     */
+    public function getGeneratedString()
+    {
+        return $this->generatedString;
+    }
+
+    /**
+     * Set newsletter
+     *
+     * @param boolean $newsletter
+     * @return Utilisateurs
+     */
+    public function setNewsletter($newsletter)
+    {
+        $this->newsletter = $newsletter;
+
+        return $this;
+    }
+
+    /**
+     * Get newsletter
+     *
+     * @return boolean 
+     */
+    public function getNewsletter()
+    {
+        return $this->newsletter;
+    }
+
+    /**
+     * Get idUtilisateur
+     *
+     * @return integer 
+     */
+    public function getIdUtilisateur()
+    {
+        return $this->idUtilisateur;
+    }
+}

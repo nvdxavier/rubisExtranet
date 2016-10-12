@@ -1,0 +1,16 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>Compte Utilisateur creation</h1>
+
+<form action="{{ path('adminCompteUtilisateur_create') }}" method="POST" {{ form_enctype(form) }}>
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('adminCompteUtilisateur') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

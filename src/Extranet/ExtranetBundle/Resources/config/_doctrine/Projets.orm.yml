@@ -1,0 +1,39 @@
+Extranet\ExtranetBundle\Entity\Projets:
+    type: entity
+    table: null
+    repositoryClass: Extranet\ExtranetBundle\Repository\ProjetsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+        nomProjet:
+            type: string
+            length: 255
+
+        descriptionProjet:
+            type: string
+            length: 255
+
+        dateDebutProjet:
+            type: datetime
+
+        dateFinProjet:
+            type: datetime
+
+        etatduProjet:
+            type: string
+            length: 255
+
+        statutProjet:
+            type: string
+            length: 255
+
+        adresseMagasin:
+            type: string
+            length: 255
+
+
+    lifecycleCallbacks: {  }

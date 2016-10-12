@@ -1,0 +1,46 @@
+Extranet\ExtranetBundle\Entity\Taches:
+    type: entity
+    table: null
+    repositoryClass: Extranet\ExtranetBundle\Repository\TachesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tache:
+            type: string
+            length: 255
+
+        descriptionTache:
+            type: string
+            length: 255
+
+        duree:
+            type: datetime
+
+        debut:
+            type: datetime
+
+        fin:
+            type: datetime
+
+        participants:
+            type: string
+            length: 255
+
+        statutTache:
+            type: string
+            length: 255
+
+        priorite:
+            type: integer
+
+        idProjet:
+            type: integer
+
+        compteutilisateur:
+            type: integer
+
+    lifecycleCallbacks: {  }

@@ -1,0 +1,56 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12">
+                <h1>Projets list</h1>
+
+                <table class="records_list">
+                    <thead>
+                    <tr>
+                        <th>Nom du projet</th>
+                        <th>Description</th>
+                        <th>Début</th>
+                        <th>Fin</th>
+                        <th>Etat du projet</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td>{{ entity.nomProjet }}</td>
+                            <td>{{ entity.descriptionProjet }}</td>
+                            <td>{% if entity.dateDebutProjet %}{{ entity.dateDebutProjet|date('Y-m-d H:i:s') }}{% endif %}</td>
+                            <td>{% if entity.dateFinProjet %}{{ entity.dateFinProjet|date('Y-m-d H:i:s') }}{% endif %}</td>
+                            <td>{{ entity.etatduProjet }}</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('projets_show', { 'id': entity.id }) }}">show</a>
+                                    </li>
+                                    {% if app.user and is_granted("ROLE_ADMIN") %}
+                                        <li>
+                                            <a href="{{ path('projets_edit', { 'id': entity.id }) }}">edit</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                {% if app.user and is_granted("ROLE_ADMIN") %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('projets_new') }}">
+                                Créer un nouveau projet
+                            </a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}

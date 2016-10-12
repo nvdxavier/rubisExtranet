@@ -1,0 +1,26 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+
+{% block body -%}
+    <h1>Editer ce compte utilisateur</h1>
+
+<div class="col-md-12">
+
+    <form action="{{ path('adminCompteUtilisateur_update', { 'id' : entity.id }) }}" method="POST" {{ form_enctype(edit_form) }}>
+        {{ form(edit_form) }}
+    </form>
+
+
+<div class="span12">
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('adminCompteUtilisateur') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+</div>
+</div>
+
+{% endblock %}
